@@ -3,7 +3,6 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 from data import Urls
-from locators.base_locators import BasePageLocators
 
 
 class BasePage:

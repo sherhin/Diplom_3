@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
 
-class RestorePage:
+class RestorePageLocators:
     RESTORE_PASSWORD_TEXT = [By.XPATH, "//h2[text()='Восстановление пароля']"]
     RESTORE_EMAIL_FIELD = [By.XPATH, '//input[@class="text input__textfield text_type_main-default"]']
     RESTORE_BUTTON = [By.XPATH, "//form//button[text()= 'Восстановить']"]

@@ -6,6 +6,7 @@ from pages.main_page import MainPage
 from pages.order_page import OrderPage
 from pages.authorization_page import AuthorizationPage
 from pages.restore_page import RestorePage
+from pages.account_page import AccountPage
 
 @pytest.fixture(scope='function')
 def driver():
@@ -34,3 +35,8 @@ def authorization_page(driver):
 def restore_page(driver):
     url_path = Urls.RESET_PASSWORD_PAGE
     return RestorePage(driver, url_path)
+
+@pytest.fixture(scope='function')
+def account_page(driver):
+    url_path = Urls.ACCOUNT_PAGE
+    return AccountPage(driver, url_path)

@@ -1,3 +1,5 @@
+import time
+
 import allure
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -58,3 +60,4 @@ class BasePage:
     def wait_for_url_change(self, url, timeout=30):
         WebDriverWait(self.driver, timeout).until(lambda d: d.current_url == url)
         return self.driver.current_url
+

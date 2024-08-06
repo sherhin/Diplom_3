@@ -43,6 +43,12 @@ class HelpersApi:
         return user
 
     @staticmethod
+    def create_user_without_data(api_client):
+        data = HelpersApi.generate_user_data()
+        api_client.send_request(HttpMethods.post, Endpoints.REGISTER, data)
+        return data
+
+    @staticmethod
     def authorize(api_client, user_data=False):
         if not user_data:
             user_data = HelpersApi.generate_user_data()

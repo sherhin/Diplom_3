@@ -6,3 +6,4 @@ class Urls:
     RESET_PASSWORD_PAGE = 'reset-password'
     ORDER_PAGE = 'feed'
     ACCOUNT_PAGE = 'account/profile'
+    ORDER_HISTORY = 'account/order-history'

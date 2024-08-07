@@ -1,8 +1,8 @@
-import time
 
 import allure
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import NoSuchElementException
 
 from data import Urls
 
@@ -61,3 +61,9 @@ class BasePage:
         WebDriverWait(self.driver, timeout).until(lambda d: d.current_url == url)
         return self.driver.current_url
 
+    @allure.step('Проверяем отсутствие элемента')
+    def element_not_exists(self, locator):
+        try:
+            self.driver.find_element(*locator)
+        except NoSuchElementException:
+            return True

@@ -1,5 +1,6 @@
 import pytest
 
+
 class TestMainPage:
 
     def test_click_to_order_page(self, main_page):
@@ -24,3 +25,7 @@ class TestMainPage:
         popup = main_page.close_popup()
         assert not popup
 
+    def test_ingredient_count(self, main_page):
+        main_page.move_ingredient()
+        count = main_page.check_count()
+        assert int(count) > 0

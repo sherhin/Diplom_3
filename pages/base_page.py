@@ -3,6 +3,7 @@ import allure
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import NoSuchElementException
+from seletools.actions import drag_and_drop
 
 from data import Urls
 
@@ -21,6 +22,10 @@ class BasePage:
     @allure.step('Получить текущий URL')
     def get_url(self):
         return self.driver.current_url
+
+    def focus_on_element(self, locator):
+        element = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(locator))
+        self.driver.execute_script("arguments[0].focus();", element)
 
     @allure.step('Найти элемент')
     def find_element_with_wait(self, locator, timeout=10):
@@ -67,3 +72,6 @@ class BasePage:
             self.driver.find_element(*locator)
         except NoSuchElementException:
             return True
+
+    def drag_and_drop(self, source, target):
+        drag_and_drop(self.driver, source, target)

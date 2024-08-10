@@ -2,7 +2,6 @@ import time
 
 from pages.base_page import BasePage
 from locators.main_page_locators import MainPageLocators
-from data import Urls
 
 class MainPage(BasePage):
 
@@ -29,6 +28,16 @@ class MainPage(BasePage):
             self.click_to_element(MainPageLocators.SAUCE_INGREDIENT)
         else:
             self.click_to_element(MainPageLocators.FILLED_INGREDIENT)
+
+    def check_count(self):
+        ingredient_count = self.get_text_from_element(MainPageLocators.INGREDIENT_COUNTER)
+        return ingredient_count
+
+    def move_ingredient(self):
+        self.open_page()
+        ingredient = self.find_element_with_wait(MainPageLocators.BUN_INGREDIENT)
+        burger_place = self.find_element_with_wait(MainPageLocators.MY_BURGER)
+        self.drag_and_drop(ingredient, burger_place)
 
     def check_popup(self):
         popup = self.get_text_from_element(MainPageLocators.DETAILS)

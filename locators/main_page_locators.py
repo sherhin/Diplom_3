@@ -14,5 +14,6 @@ class MainPageLocators:
     POPUP = [By.XPATH, ".//div[@class = 'Modal_modal__contentBox__sCy8X pt-10 pb-15']"]
     MY_BURGER = [By.XPATH, "//span[@class = 'constructor-element__row']"]
     ORDER_PLACED = [By.XPATH, ".//section[contains(@class, 'Modal_modal_opened')]//p[text()='идентификатор заказа']"]
-    INGREDIENT_COUNTER = [By.XPATH,
-                          ".//a[contains(@class, 'BurgerIngredient_ingredient_')]//p[contains(@class, 'counter_counter__num')]"]
+    INGREDIENT_COUNTER = [By.XPATH, './/p[contains(@class, "counter_counter__num__3nue1")]']
+    # INGREDIENT_COUNTER = [By.XPATH,
+    #                       ".//a[contains(@class, 'BurgerIngredient_ingredient_')]//p[contains(@class, 'counter_counter__num')]"]

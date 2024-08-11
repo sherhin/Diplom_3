@@ -44,7 +44,7 @@ class BasePage:
 
     @allure.step('Получить текст из элемента')
     def get_text_from_element(self, locator):
-        return self.find_element_with_wait(locator, timeout=20).text
+        return self.find_element_with_wait(locator).text
 
     @allure.step('Скролл до элемента')
     def scroll_to_element(self, locator):

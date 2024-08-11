@@ -10,4 +10,5 @@ class OrderPageLocators:
     COMPLETED_ORDERS_TODAY_BEFORE = [By.XPATH, ".//div/p[text()='Выполнено за сегодня:']/following-sibling::p"]
     LABEL_ALL_ORDERS_ARE_READY = [By.XPATH, ".//ul[contains(@class, 'OrderFeed_orderListReady')]"
                                             "/li[text()='Все текущие заказы готовы!']"]
-    ORDER_LIST = [By.XPATH, ".//ul[contains(@class, 'OrderFeed_orderListReady')]/li[text()='{}']"]
+    ORDER_LIST = [By.XPATH, ".//ul[contains(@class, 'OrderFeed_orderListReady')]"]
+    ALL_ORDERS_COUNT= [By.XPATH, "//p[@class ='OrderFeed_number__2MbrQ text text_type_digits-large']"]

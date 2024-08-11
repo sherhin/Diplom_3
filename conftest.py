@@ -8,11 +8,21 @@ from pages.authorization_page import AuthorizationPage
 from pages.restore_page import RestorePage
 from pages.account_page import AccountPage
 
-@pytest.fixture(scope='function')
-def driver():
+
+def pytest_addoption(parser):
+    parser.addoption("--browser", action="store", default="chrome", help="Выберите браузер: chrome или firefox")
+
+@pytest.fixture(scope="function")
+def driver(request):
     """Создание вебдрайвер-клиента
     """
-    driver = webdriver.Chrome()
+    browser_name = request.config.getoption("--browser")
+    if browser_name == "chrome":
+        driver = webdriver.Chrome()
+    elif browser_name == "firefox":
+        driver = webdriver.Firefox()
+    else:
+        raise ValueError(f"Браузер '{browser_name}' не поддерживается.")
     driver.maximize_window()
     yield driver
     driver.quit()

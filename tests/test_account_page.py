@@ -1,5 +1,3 @@
-import time
-
 from helpers_api.conftest import api_client
 from helpers_api.helpers_api import HelpersApi as help_api
 class TestAccountPage:

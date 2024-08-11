@@ -15,5 +15,3 @@ class MainPageLocators:
     MY_BURGER = [By.XPATH, "//span[@class = 'constructor-element__row']"]
     ORDER_PLACED = [By.XPATH, ".//section[contains(@class, 'Modal_modal_opened')]//p[text()='идентификатор заказа']"]
     INGREDIENT_COUNTER = [By.XPATH, './/p[contains(@class, "counter_counter__num__3nue1")]']
-    # INGREDIENT_COUNTER = [By.XPATH,
-    #                       ".//a[contains(@class, 'BurgerIngredient_ingredient_')]//p[contains(@class, 'counter_counter__num')]"]
